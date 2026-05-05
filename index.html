@@ -567,10 +567,26 @@
         display: none;
       }
 
-      #apmu-kit .photo-card,
+      #apmu-kit .photo-card {
+        min-height: auto;
+        height: auto;
+      }
+
       #apmu-kit .photo-card img {
         min-height: 470px;
         height: 470px;
+      }
+
+      #apmu-kit .product {
+        position: static;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        max-width: none;
+        margin: 0;
+        border-width: 1px 0 0;
+        border-radius: 0;
+        box-shadow: none;
       }
     }
 
@@ -615,7 +631,7 @@
       }
 
       #apmu-kit .photo-card {
-        overflow: visible;
+        overflow: hidden;
         min-height: auto;
         border-radius: 24px;
       }
@@ -631,16 +647,19 @@
       }
 
       #apmu-kit .product {
-        position: relative;
+        position: static;
         left: auto;
         right: auto;
         bottom: auto;
         max-width: none;
-        margin: -34px 12px 0;
+        margin: 0;
+        border-width: 1px 0 0;
+        border-radius: 0;
+        box-shadow: none;
       }
 
       #apmu-kit .mockups {
-        grid-template-columns: repeat(2, 1fr);
+        display: none;
       }
 
       #apmu-kit section {
