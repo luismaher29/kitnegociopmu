@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kit Negocio PMU desde Cero | Aprende PMU</title>
+  <meta name="description" content="Ebook + 5 descargables prácticos para organizar tu cabina, calcular precios, mejorar tu Instagram, responder consultas y planificar contenido PMU." />
+  <style>
+    #apmu-kit {
+      --bg: #fff7f2;
+      --paper: #fffdf9;
+      --paper-2: #f6e9df;
+      --ink: #332821;
+      --taupe: #5b493f;
+      --muted: #796a61;
+      --rose: #d98d91;
+      --rose-2: #b96f78;
+      --wine: #864a54;
+      --gold: #b79050;
+      --sage: #879377;
+      --line: rgba(91, 73, 63, .16);
+      --shadow: 0 22px 56px rgba(67, 45, 35, .16);
+      --radius: 22px;
+      font-family: Montserrat, Inter, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 86% 2%, rgba(217, 141, 145, .26), transparent 31rem),
+        radial-gradient(circle at 8% 26%, rgba(183, 144, 80, .14), transparent 24rem),
+        linear-gradient(180deg, #fffaf6 0%, var(--bg) 42%, #fffdf9 100%);
+      overflow: hidden;
+    }
+
+    #apmu-kit,
+    #apmu-kit * {
+      box-sizing: border-box;
+    }
+
+    #apmu-kit img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    #apmu-kit a {
+      color: inherit;
+    }
+
+    #apmu-kit .wrap {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    #apmu-kit .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 0 10px;
+      color: var(--taupe);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    #apmu-kit .topbar span:last-child {
+      color: var(--gold);
+    }
+
+    #apmu-kit .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(320px, .98fr);
+      align-items: center;
+      gap: clamp(28px, 5vw, 62px);
+      min-height: 720px;
+      padding: 34px 0 78px;
+    }
+
+    #apmu-kit .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      max-width: 100%;
+      padding: 9px 14px;
+      border: 1px solid rgba(183, 144, 80, .38);
+      border-radius: 999px;
+      background: rgba(255, 253, 249, .76);
+      color: var(--taupe);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    #apmu-kit .pill::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--rose);
+      box-shadow: 0 0 0 5px rgba(217, 141, 145, .16);
+      flex: 0 0 auto;
+    }
+
+    #apmu-kit h1,
+    #apmu-kit h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--taupe);
+      letter-spacing: -.035em;
+    }
+
+    #apmu-kit h1 {
+      max-width: 760px;
+      margin-top: 20px;
+      font-size: clamp(44px, 7vw, 88px);
+      line-height: .92;
+    }
+
+    #apmu-kit h1 em {
+      color: var(--wine);
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    #apmu-kit h2 {
+      font-size: clamp(32px, 4.2vw, 54px);
+      line-height: .98;
+    }
+
+    #apmu-kit h3 {
+      margin: 0 0 8px;
+      color: var(--taupe);
+      font-size: 17px;
+      line-height: 1.2;
+    }
+
+    #apmu-kit p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.62;
+    }
+
+    #apmu-kit .lead {
+      max-width: 670px;
+      margin-top: 22px;
+      font-size: clamp(17px, 2vw, 21px);
+    }
+
+    #apmu-kit .lead strong {
+      color: var(--taupe);
+    }
+
+    #apmu-kit .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    #apmu-kit .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 15px 26px;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--rose), var(--rose-2));
+      box-shadow: 0 16px 34px rgba(185, 111, 120, .34);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.15;
+      text-align: center;
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    #apmu-kit .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 42px rgba(185, 111, 120, .43);
+    }
+
+    #apmu-kit .btn:focus-visible {
+      outline: 3px solid rgba(183, 144, 80, .38);
+      outline-offset: 4px;
+    }
+
+    #apmu-kit .micro {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    #apmu-kit .price-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 14px;
+      width: fit-content;
+      max-width: 100%;
+      margin-top: 26px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 253, 249, .82);
+      box-shadow: 0 10px 24px rgba(67, 45, 35, .06);
+    }
+
+    #apmu-kit .price-strip .label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    #apmu-kit .old {
+      color: var(--muted);
+      font-weight: 800;
+      text-decoration: line-through;
+    }
+
+    #apmu-kit .price {
+      color: var(--taupe);
+      font-size: 34px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    #apmu-kit .visual {
+      position: relative;
+      min-width: 0;
+    }
+
+    #apmu-kit .photo-card {
+      position: relative;
+      min-height: 560px;
+      overflow: hidden;
+      border: 1px solid rgba(183, 144, 80, .28);
+      border-radius: 30px;
+      background: var(--paper-2);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    #apmu-kit .photo-card img {
+      height: 560px;
+      object-fit: cover;
+    }
+
+    #apmu-kit .photo-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(255, 253, 249, .72), rgba(255, 253, 249, .16) 48%, transparent 78%);
+      pointer-events: none;
+    }
+
+    #apmu-kit .product {
+      position: absolute;
+      z-index: 2;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      max-width: 370px;
+      padding: 18px;
+      border: 1px solid rgba(183, 144, 80, .32);
+      border-radius: 20px;
+      background: rgba(255, 253, 249, .92);
+      box-shadow: 0 16px 34px rgba(67, 45, 35, .16);
+      backdrop-filter: blur(10px);
+    }
+
+    #apmu-kit .kicker {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    #apmu-kit .mockups {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    #apmu-kit .doc {
+      min-height: 88px;
+      padding: 9px;
+      border: 1px solid rgba(91, 73, 63, .12);
+      border-radius: 12px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.9), rgba(246,233,223,.88)),
+        repeating-linear-gradient(180deg, transparent 0 13px, rgba(91,73,63,.08) 14px 15px);
+    }
+
+    #apmu-kit .doc span {
+      display: block;
+      height: 5px;
+      margin-bottom: 7px;
+      border-radius: 999px;
+      background: rgba(91, 73, 63, .16);
+    }
+
+    #apmu-kit .doc span:first-child {
+      width: 72%;
+      background: rgba(217, 141, 145, .52);
+    }
+
+    #apmu-kit .doc span:nth-child(2) {
+      width: 94%;
+    }
+
+    #apmu-kit .doc span:nth-child(3) {
+      width: 62%;
+    }
+
+    #apmu-kit .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+      max-width: 660px;
+    }
+
+    #apmu-kit .trust {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 253, 249, .66);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    #apmu-kit .trust b {
+      display: block;
+      color: var(--taupe);
+      font-size: 15px;
+    }
+
+    #apmu-kit section {
+      padding: 68px 0;
+    }
+
+    #apmu-kit .section-head {
+      max-width: 780px;
+      margin-bottom: 28px;
+    }
+
+    #apmu-kit .section-head p {
+      margin-top: 12px;
+      font-size: 17px;
+    }
+
+    #apmu-kit .grid-3,
+    #apmu-kit .grid-4,
+    #apmu-kit .include-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    #apmu-kit .grid-3,
+    #apmu-kit .include-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #apmu-kit .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    #apmu-kit .card {
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 249, .78);
+      box-shadow: 0 12px 28px rgba(67, 45, 35, .07);
+    }
+
+    #apmu-kit .card p,
+    #apmu-kit .card li {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    #apmu-kit .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      background: rgba(217, 141, 145, .16);
+      color: var(--wine);
+      font-weight: 950;
+    }
+
+    #apmu-kit .image-band,
+    #apmu-kit .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    #apmu-kit .image-card {
+      position: relative;
+      min-height: 330px;
+      overflow: hidden;
+      border: 1px solid rgba(183, 144, 80, .26);
+      border-radius: 26px;
+      background: var(--paper-2);
+      box-shadow: 0 14px 34px rgba(67, 45, 35, .12);
+    }
+
+    #apmu-kit .image-card img {
+      height: 100%;
+      min-height: 330px;
+      object-fit: cover;
+    }
+
+    #apmu-kit .image-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 52%, rgba(51, 40, 33, .2));
+      pointer-events: none;
+    }
+
+    #apmu-kit ul {
+      padding: 0;
+      margin: 16px 0 0;
+      list-style: none;
+    }
+
+    #apmu-kit li {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    #apmu-kit li + li {
+      margin-top: 9px;
+    }
+
+    #apmu-kit li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .62em;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    #apmu-kit .ace-letter {
+      margin-bottom: 8px;
+      color: var(--wine);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 54px;
+      line-height: .9;
+    }
+
+    #apmu-kit .offer {
+      padding: 82px 0;
+    }
+
+    #apmu-kit .offer-box {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr);
+      gap: 30px;
+      align-items: center;
+      padding: clamp(26px, 5vw, 54px);
+      border: 1px solid rgba(183, 144, 80, .34);
+      border-radius: 30px;
+      background:
+        linear-gradient(135deg, rgba(255,253,249,.98), rgba(246,233,223,.72)),
+        radial-gradient(circle at 100% 0, rgba(135,147,119,.18), transparent 26rem);
+      box-shadow: var(--shadow);
+    }
+
+    #apmu-kit .checkout {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--paper);
+      text-align: center;
+    }
+
+    #apmu-kit .checkout .big {
+      margin: 10px 0 6px;
+      color: var(--taupe);
+      font-size: clamp(48px, 7vw, 64px);
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    #apmu-kit .checkout .btn {
+      width: 100%;
+      margin-top: 18px;
+    }
+
+    #apmu-kit .faq {
+      display: grid;
+      gap: 12px;
+      max-width: 900px;
+    }
+
+    #apmu-kit details {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: rgba(255, 253, 249, .78);
+    }
+
+    #apmu-kit summary {
+      cursor: pointer;
+      color: var(--taupe);
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    #apmu-kit details p {
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    #apmu-kit footer {
+      padding: 28px 0 88px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    #apmu-kit .mobile-cta {
+      display: none;
+    }
+
+    @media (max-width: 920px) {
+      #apmu-kit .hero,
+      #apmu-kit .offer-box,
+      #apmu-kit .split,
+      #apmu-kit .image-band {
+        grid-template-columns: 1fr;
+      }
+
+      #apmu-kit .hero {
+        min-height: auto;
+        padding-bottom: 52px;
+      }
+
+      #apmu-kit .grid-3,
+      #apmu-kit .grid-4,
+      #apmu-kit .include-grid,
+      #apmu-kit .trust-row {
+        grid-template-columns: 1fr;
+      }
+
+      #apmu-kit .trust-row {
+        display: none;
+      }
+
+      #apmu-kit .photo-card,
+      #apmu-kit .photo-card img {
+        min-height: 470px;
+        height: 470px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      #apmu-kit .wrap {
+        width: min(100% - 24px, 1120px);
+      }
+
+      #apmu-kit .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 16px;
+        letter-spacing: .14em;
+      }
+
+      #apmu-kit h1 {
+        font-size: clamp(42px, 14vw, 58px);
+      }
+
+      #apmu-kit .lead,
+      #apmu-kit .section-head p {
+        font-size: 16px;
+      }
+
+      #apmu-kit .actions {
+        align-items: stretch;
+      }
+
+      #apmu-kit .btn {
+        width: 100%;
+        min-height: 54px;
+        padding-inline: 18px;
+      }
+
+      #apmu-kit .price-strip {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      #apmu-kit .trust-row {
+        display: none;
+      }
+
+      #apmu-kit .photo-card {
+        overflow: visible;
+        min-height: auto;
+        border-radius: 24px;
+      }
+
+      #apmu-kit .photo-card img {
+        height: 360px;
+        min-height: 360px;
+        border-radius: 24px;
+      }
+
+      #apmu-kit .photo-card::after {
+        border-radius: 24px;
+      }
+
+      #apmu-kit .product {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        max-width: none;
+        margin: -34px 12px 0;
+      }
+
+      #apmu-kit .mockups {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      #apmu-kit section {
+        padding: 50px 0;
+      }
+
+      #apmu-kit .card,
+      #apmu-kit .checkout,
+      #apmu-kit .offer-box {
+        border-radius: 20px;
+      }
+
+      #apmu-kit .image-card,
+      #apmu-kit .image-card img {
+        min-height: 260px;
+      }
+
+      #apmu-kit .mobile-cta {
+        position: fixed;
+        z-index: 9999;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px;
+        border: 1px solid rgba(183, 144, 80, .28);
+        border-radius: 18px;
+        background: rgba(255, 253, 249, .95);
+        box-shadow: 0 16px 38px rgba(67, 45, 35, .2);
+        backdrop-filter: blur(12px);
+      }
+
+      #apmu-kit .mobile-cta strong {
+        display: block;
+        color: var(--taupe);
+        font-size: 14px;
+        line-height: 1.1;
+      }
+
+      #apmu-kit .mobile-cta span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      #apmu-kit .mobile-cta .btn {
+        width: auto;
+        min-height: 42px;
+        padding: 11px 14px;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!--
+    PARA WIX:
+    1. Pega todo este código en un elemento "Insertar HTML".
+    2. Checkout configurado: https://pay.hotmart.com/V105687855H
+    3. Si lo pegas en Wix, sube estas 4 imágenes a Wix y cambia los src por sus URLs públicas:
+       assets/kit-negocio-pmu/hero-cabina-pmu.png
+       assets/kit-negocio-pmu/consulta-pmu.png
+       assets/kit-negocio-pmu/planificacion-pmu.png
+       assets/kit-negocio-pmu/profesional-pmu.png
+  -->
+  <div id="apmu-kit">
+    <header class="wrap topbar">
+      <div>Aprende PMU</div>
+      <span>Kit digital PDF</span>
+    </header>
+
+    <main>
+      <section class="wrap hero">
+        <div>
+          <div class="pill">Lanzamiento especial</div>
+          <h1>Kit Negocio PMU <em>desde Cero</em></h1>
+          <p class="lead">
+            Ebook + 5 descargables prácticos para organizar tu cabina, calcular precios, mejorar tu Instagram, responder consultas y planificar contenido con más claridad profesional.
+          </p>
+
+          <div class="actions">
+            <a class="btn" href="https://pay.hotmart.com/V105687855H" target="_blank" rel="noopener">Quiero acceder por US$9.99</a>
+            <span class="micro">Acceso inmediato · PDF digital · Aprende PMU</span>
+          </div>
+
+          <div class="price-strip" aria-label="Precio especial de lanzamiento">
+            <span class="label">Precio regular</span>
+            <span class="old">US$19.99</span>
+            <span class="label">Lanzamiento</span>
+            <span class="price">US$9.99</span>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust"><b>6 recursos</b>Ebook + plantillas accionables</div>
+            <div class="trust"><b>100% digital</b>Descarga después de la compra</div>
+            <div class="trust"><b>Aplicación simple</b>Para trabajar a tu ritmo</div>
+          </div>
+        </div>
+
+        <div class="visual">
+          <div class="photo-card">
+            <img src="assets/kit-negocio-pmu/hero-cabina-pmu.png" alt="Profesional PMU organizando su negocio en una cabina premium" />
+            <div class="product">
+              <span class="kicker">Kit digital PDF</span>
+              <h3>Ebook + 5 descargables</h3>
+              <p>Cabina, costos, Instagram, WhatsApp / DM y contenido para 30 días.</p>
+              <div class="mockups" aria-hidden="true">
+                <div class="doc"><span></span><span></span><span></span></div>
+                <div class="doc"><span></span><span></span><span></span></div>
+                <div class="doc"><span></span><span></span><span></span></div>
+                <div class="doc"><span></span><span></span><span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap">
+        <div class="section-head">
+          <h2>La técnica importa, pero tu negocio también necesita estructura.</h2>
+          <p>Muchas profesionales aprenden micropigmentación, pero se bloquean cuando llega el momento de vender, organizar precios, publicar contenido o responder consultas con seguridad.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>¿Qué cobro?</h3>
+            <p>Ordena tus costos antes de definir precios, paquetes o promociones.</p>
+          </article>
+          <article class="card">
+            <h3>¿Qué publico?</h3>
+            <p>Planifica contenido educativo, de confianza, demostración y venta.</p>
+          </article>
+          <article class="card">
+            <h3>¿Cómo respondo?</h3>
+            <p>Usa mensajes claros para orientar consultas por WhatsApp o DM.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="wrap">
+        <div class="image-band">
+          <div class="image-card">
+            <img src="assets/kit-negocio-pmu/consulta-pmu.png" alt="Consulta profesional PMU en estudio premium" />
+          </div>
+          <div class="image-card">
+            <img src="assets/kit-negocio-pmu/planificacion-pmu.png" alt="Mesa de planificación con tablet, calculadora y materiales PMU" />
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap">
+        <div class="section-head">
+          <h2>Todo lo que incluye el kit</h2>
+          <p>Un recurso corto, práctico y directo para empezar a ordenar las bases de tu negocio PMU sin improvisar.</p>
+        </div>
+
+        <div class="include-grid">
+          <article class="card">
+            <span class="num">1</span>
+            <h3>Ebook principal</h3>
+            <p>Tu Negocio de Micropigmentación desde Cero: cabina, marca, precios, redes, ventas y organización.</p>
+          </article>
+          <article class="card">
+            <span class="num">2</span>
+            <h3>Checklist de cabina</h3>
+            <p>Evalúa si tu espacio transmite orden, confianza, cuidado y profesionalismo.</p>
+          </article>
+          <article class="card">
+            <span class="num">3</span>
+            <h3>Plantilla de costos</h3>
+            <p>Organiza materiales, tiempo, gastos fijos, inversión y promociones con criterio.</p>
+          </article>
+          <article class="card">
+            <span class="num">4</span>
+            <h3>Auditoría de Instagram</h3>
+            <p>Revisa si tu perfil ayuda a que una clienta entienda, confíe y reserve.</p>
+          </article>
+          <article class="card">
+            <span class="num">5</span>
+            <h3>Guía WhatsApp / DM</h3>
+            <p>Mensajes para primera consulta, precio, objeciones, reserva, seguimiento y testimonio.</p>
+          </article>
+          <article class="card">
+            <span class="num">6</span>
+            <h3>Calendario 30 días</h3>
+            <p>Ideas y planner para publicar con intención y dejar de improvisar tu contenido.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="wrap">
+        <div class="split">
+          <div class="image-card">
+            <img src="assets/kit-negocio-pmu/profesional-pmu.png" alt="Profesional de micropigmentación en cabina cálida y elegante" />
+          </div>
+          <div>
+            <div class="section-head">
+              <h2>Más que un ebook: un kit de acción</h2>
+              <p>Diseñado para revisar, completar y aplicar. La intención es que puedas ordenar tu cabina, tus precios, tus mensajes y tu contenido con una ruta clara.</p>
+            </div>
+            <div class="card">
+              <h3>Herramientas listas para trabajar</h3>
+              <ul>
+                <li>Checklist de cabina profesional</li>
+                <li>Plantilla de costos básicos</li>
+                <li>Auditoría de Instagram PMU</li>
+                <li>Guía WhatsApp / DM</li>
+                <li>Calendario de contenido 30 días</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap">
+        <div class="section-head">
+          <h2>Metodología ACE</h2>
+          <p>Una forma simple de trabajar tu negocio con más claridad: analizar, decidir con criterio y ejecutar.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="ace-letter">A</div>
+            <h3>Análisis</h3>
+            <p>Observa tu etapa, clienta, cabina, costos y comunicación actual.</p>
+          </article>
+          <article class="card">
+            <div class="ace-letter">C</div>
+            <h3>Criterio</h3>
+            <p>Toma mejores decisiones sobre precios, contenido, marca y atención.</p>
+          </article>
+          <article class="card">
+            <div class="ace-letter">E</div>
+            <h3>Ejecución</h3>
+            <p>Aplica herramientas prácticas y revisa tus avances con intención.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="wrap">
+        <div class="section-head">
+          <h2>Este kit es para ti si...</h2>
+        </div>
+        <div class="grid-4">
+          <article class="card"><p>Estás empezando en micropigmentación y quieres organizarte mejor.</p></article>
+          <article class="card"><p>Ya atiendes clientas, pero sientes que improvisas demasiado.</p></article>
+          <article class="card"><p>Quieres mejorar tu Instagram, tus mensajes y tu contenido.</p></article>
+          <article class="card"><p>Necesitas una estructura clara para cabina, costos y ventas.</p></article>
+        </div>
+      </section>
+
+      <section class="wrap offer" id="comprar">
+        <div class="offer-box">
+          <div>
+            <span class="pill">Acceso inmediato</span>
+            <h2 style="margin-top:18px;">Accede hoy al Kit Negocio PMU desde Cero</h2>
+            <p class="lead">Material digital listo para descargar y trabajar a tu ritmo.</p>
+            <ul>
+              <li>Ebook principal + 5 descargables prácticos</li>
+              <li>Formato PDF digital</li>
+              <li>Acceso inmediato después de la compra</li>
+              <li>Creado por Aprende PMU</li>
+            </ul>
+          </div>
+
+          <aside class="checkout" aria-label="Resumen de compra">
+            <p>Precio especial de lanzamiento</p>
+            <div class="big">US$9.99</div>
+            <p class="old">Precio regular: US$19.99</p>
+            <a class="btn" href="https://pay.hotmart.com/V105687855H" target="_blank" rel="noopener">Comprar ahora</a>
+            <p class="micro" style="margin-top:14px;">Producto digital · Acceso inmediato</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="wrap">
+        <div class="section-head">
+          <h2>Preguntas frecuentes</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>¿Es un producto físico o digital?</summary>
+            <p>Es un producto digital en PDF. Podrás descargarlo después de la compra.</p>
+          </details>
+          <details>
+            <summary>¿Incluye formación técnica de micropigmentación?</summary>
+            <p>No. Este kit se enfoca en estructura de negocio: cabina, costos, Instagram, atención, contenido y organización.</p>
+          </details>
+          <details>
+            <summary>¿Sirve si estoy empezando?</summary>
+            <p>Sí. Está pensado para estudiantes y profesionales PMU que quieren ordenar su negocio desde una base más clara.</p>
+          </details>
+          <details>
+            <summary>¿Promete resultados económicos?</summary>
+            <p>No. Es un recurso educativo y estratégico. Los resultados dependen de tu aplicación, contexto, experiencia, mercado y constancia.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrap">
+      <p>© Aprende PMU · Material educativo digital. Valida siempre normativas locales, sanitarias, legales y contables según tu país o ciudad.</p>
+    </footer>
+
+    <div class="mobile-cta" aria-label="Comprar kit negocio PMU">
+      <div>
+        <strong>Kit PMU desde Cero</strong>
+        <span>US$9.99 · PDF digital</span>
+      </div>
+      <a class="btn" href="https://pay.hotmart.com/V105687855H" target="_blank" rel="noopener">Comprar</a>
+    </div>
+  </div>
+</body>
+</html>
